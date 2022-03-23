@@ -19742,3 +19742,8 @@ a:focus {
 }
 
 /*# sourceMappingURL=styles.css.map */
+
+.rooms-gallery .gallery_product .wrap-box .box-img img {
+  height:200px;
+  object-fit:cover;
+}
