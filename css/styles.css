@@ -10508,9 +10508,10 @@ button.close {
 .banner-tems {
   padding-top: 160px;
   padding-bottom: 40px;
-  background: url("../images/header.jpg") no-repeat;
+  background: url("../images/slider-1\ 1.png") no-repeat;
   background-size: cover;
   background-position: center;
+  height:300px;
 }
 .banner-tems.bg-restaurants {
   background: url("../images/Restaurants/Restaurants.jpg") no-repeat;
