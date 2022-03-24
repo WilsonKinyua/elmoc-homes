@@ -98,23 +98,46 @@
                     </div>
                     <div class="col-md-6 col-lg-6 col-lg-offset-1">
                         <div class="contact-form">
-                            <form action="#" method="post">
+                            <style>
+                                .alert {
+                                    display: none;
+                                }
+
+                                .display {
+                                    display: block;
+                                }
+                            </style>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="alert alert-success" role="alert" id="success-alert">
+                                        Message Sent Successfully! We will be in touch shortly.
+                                    </div>
+                                    <div class="alert alert-danger" role="alert" id="danger-alert">
+                                        An error occurred! Please try again later.
+                                    </div>
+                                </div>
+                            </div>
+                            <form id="contactUs" action="https://getform.io/f/e7ee65be-925f-459c-82c8-5e07f8648c79"
+                                method="POST">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <input type="text" class="field-text" name="name" placeholder="Name">
+                                        <input type="text" class="field-text" name="name" id="name" placeholder="Name"
+                                            required>
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="field-text" name="email" placeholder="Email">
+                                        <input type="text" class="field-text" name="email" id="email"
+                                            placeholder="Email" required>
                                     </div>
                                     <div class="col-sm-12">
-                                        <input type="text" class="field-text" name="subject" placeholder="Subject">
+                                        <input type="text" class="field-text" name="subject" id="subject"
+                                            placeholder="Subject" required>
                                     </div>
                                     <div class="col-sm-12">
-                                        <textarea cols="30" rows="10" name="message" class="field-textarea"
-                                            placeholder="Write what do you want"></textarea>
+                                        <textarea cols="30" rows="10" name="message" id="message" class="field-textarea"
+                                            placeholder="Write what do you want" required></textarea>
                                     </div>
                                     <div class="col-sm-6">
-                                        <button type="submit" class="btn btn-room">SEND</button>
+                                        <button type="submit" class="btn btn-room">SEND MESSAGE</button>
                                     </div>
                                 </div>
                             </form>
@@ -124,8 +147,6 @@
             </div>
         </div>
     </section>
-    <!-- END / CONTACT -->
-    <!-- MAP -->
     <div class="section-map">
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18978.789172785317!2d35.96180067967394!3d-0.17855928641406676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1829f6f2d8d061fd%3A0xf5c6ed1c10a7a362!2skabarak%20main%20gate!5e0!3m2!1sen!2ske!4v1647700546019!5m2!1sen!2ske"
@@ -187,6 +208,47 @@
     <script type="text/javascript" src="js/bootstrap-select.js"></script>
     <script type="text/javascript" src="js/jquery.littlelightbox.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+
+    <!-- <script>
+        // send contact us message
+        $("#contactUs").submit(function (e) {
+            e.preventDefault();
+            const formData = new FormData();
+            formData.append(
+                'name',
+                document.querySelector('input[name="name"]').value
+            )
+            formData.append(
+                'email',
+                document.querySelector('input[name="email"]').value
+            )
+            formData.append(
+                'subject',
+                document.querySelector('input[name="subject"]').value
+            )
+            formData.append(
+                'message',
+                document.querySelector('textarea[name="message"]').value
+            )
+            var action = $(this).attr("action");
+            $.ajax({
+                type: "POST",
+                url: action,
+                crossDomain: true,
+                data: formData,
+                dataType: "json",
+                processData: false,
+                contentType: false,
+                headers: {
+                    "Accept": "application/json"
+                }
+            }).done(function () {
+                $('#success-alert').addClass('display');
+            }).fail(function () {
+                $('#danger-alert').addClass('display');
+            });
+        });
+    </script> -->
 </body>
 
 
