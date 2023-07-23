@@ -7751,6 +7751,7 @@ button.close {
   padding-bottom: 20px;
   color: #fff;
   text-align: center;
+  /* background-color: rgba(0, 0, 0, 0.5); */
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 .carousel-caption .btn {
@@ -10508,13 +10509,13 @@ button.close {
 .banner-tems {
   padding-top: 160px;
   padding-bottom: 40px;
-  background: url("../images/slider-1\ 1.png") no-repeat;
+  background: url("../images/sliders/1.jpeg") no-repeat;filter: brightness(50%);
   background-size: cover;
   background-position: center;
   height:300px;
 }
 .banner-tems.bg-restaurants {
-  background: url("../images/Restaurants/Restaurants.jpg") no-repeat;
+  background: url("../images/sliders/2.jpeg") no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -19747,4 +19748,8 @@ a:focus {
 .rooms-gallery .gallery_product .wrap-box .box-img img {
   height:200px;
   object-fit:cover;
+}
+
+.brightness-100 {
+  filter: brightness(40%);
 }
